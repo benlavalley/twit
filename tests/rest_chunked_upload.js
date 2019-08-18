@@ -18,7 +18,7 @@ describe('twit.postMediaChunked', function () {
 
   it('POST media/upload via manual commands works with .mp4', function (done) {
     var mediaFilePath = path.join(__dirname, './video/station.mp4');
-    var mediaType = mime.lookup(mediaFilePath);
+    var mediaType = mime.getType(mediaFilePath);
     var mediaFileSizeBytes = fs.statSync(mediaFilePath).size;
 
     var twit = new Twit(config);
